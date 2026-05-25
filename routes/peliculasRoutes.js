@@ -15,4 +15,27 @@ router.get('/', async (req, res) => {
   }
 })
 
+router.get('/agregar', async (req, res) => {
+  // Obtener géneros para el dropdown
+  try {
+    const [generos] = await pool.query('SELECT DISTINCT genero FROM peliculas')
+    console.log('Géneros obtenidos:', generos) // Verificar los géneros obtenidos
+    res.render('insertar', { title: 'Agregar Película', generos })
+  } catch (error) {
+    console.error('Error al obtener los géneros:', error)
+    res.status(500).send('Error al obtener los géneros')
+  }
+})
+
+router.post('/agregar', async (req, res) => {
+  try {
+    const { titulo, director, anio, genero, duracion, nota, pais } = req.body
+    await pool.query('INSERT INTO peliculas (titulo, director, anio, genero, duracion, nota, pais) VALUES (?, ?, ?, ?, ?, ?, ?)', [titulo, director, anio, genero, duracion, nota, pais])
+    res.redirect('/peliculas')
+  } catch (error) {
+    console.error('Error al agregar la película:', error)
+    res.status(500).send('Error al agregar la película')
+  }
+})
+
 export default router

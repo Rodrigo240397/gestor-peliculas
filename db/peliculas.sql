@@ -1,0 +1,152 @@
+DROP DATABASE IF EXISTS peliculas_db;
+CREATE DATABASE peliculas_db;
+USE peliculas_db;
+
+CREATE TABLE peliculas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    titulo VARCHAR(100),
+    director VARCHAR(100),
+    genero VARCHAR(50),
+    anio INT,
+    duracion INT,
+    nota DECIMAL(3,1),
+    pais VARCHAR(50)
+);
+
+INSERT INTO peliculas (titulo, director, genero, anio, duracion, nota, pais) VALUES
+('Origen', 'Christopher Nolan', 'Ciencia Ficcion', 2010, 148, 8.8, 'USA'),
+('Interstellar', 'Christopher Nolan', 'Ciencia Ficcion', 2014, 169, 8.7, 'USA'),
+('Gladiator', 'Ridley Scott', 'Accion', 2000, 155, 8.5, 'USA'),
+('Titanic', 'James Cameron', 'Drama', 1997, 195, 7.9, 'USA'),
+('Avatar', 'James Cameron', 'Ciencia Ficcion', 2009, 162, 7.8, 'USA'),
+('El Padrino', 'Francis Ford Coppola', 'Drama', 1972, 175, 9.2, 'USA'),
+('El Caballero Oscuro', 'Christopher Nolan', 'Accion', 2008, 152, 9.0, 'USA'),
+('Pulp Fiction', 'Quentin Tarantino', 'Drama', 1994, 154, 8.9, 'USA'),
+('Seven', 'David Fincher', 'Thriller', 1995, 127, 8.6, 'USA'),
+('Fight Club', 'David Fincher', 'Drama', 1999, 139, 8.8, 'USA'),
+
+('Toy Story', 'John Lasseter', 'Animacion', 1995, 81, 8.3, 'USA'),
+('Coco', 'Lee Unkrich', 'Animacion', 2017, 105, 8.4, 'USA'),
+('Shrek', 'Andrew Adamson', 'Animacion', 2001, 90, 7.9, 'USA'),
+('Frozen', 'Chris Buck', 'Animacion', 2013, 102, 7.5, 'USA'),
+('Buscando a Nemo', 'Andrew Stanton', 'Animacion', 2003, 100, 8.2, 'USA'),
+
+('Amelie', 'Jean-Pierre Jeunet', 'Romance', 2001, 122, 8.3, 'Francia'),
+('Parásitos', 'Bong Joon-ho', 'Thriller', 2019, 132, 8.6, 'Corea del Sur'),
+('Oldboy', 'Park Chan-wook', 'Thriller', 2003, 120, 8.4, 'Corea del Sur'),
+('Your Name', 'Makoto Shinkai', 'Animacion', 2016, 106, 8.4, 'Japon'),
+('El Viaje de Chihiro', 'Hayao Miyazaki', 'Animacion', 2001, 125, 8.6, 'Japon'),
+
+('Matrix', 'Wachowski', 'Ciencia Ficcion', 1999, 136, 8.7, 'USA'),
+('John Wick', 'Chad Stahelski', 'Accion', 2014, 101, 7.4, 'USA'),
+('Mad Max Fury Road', 'George Miller', 'Accion', 2015, 120, 8.1, 'Australia'),
+('Joker', 'Todd Phillips', 'Drama', 2019, 122, 8.4, 'USA'),
+('Whiplash', 'Damien Chazelle', 'Drama', 2014, 107, 8.5, 'USA'),
+
+('La La Land', 'Damien Chazelle', 'Musical', 2016, 128, 8.0, 'USA'),
+('Top Gun Maverick', 'Joseph Kosinski', 'Accion', 2022, 130, 8.3, 'USA'),
+('Dune', 'Denis Villeneuve', 'Ciencia Ficcion', 2021, 155, 8.1, 'Canada'),
+('Blade Runner 2049', 'Denis Villeneuve', 'Ciencia Ficcion', 2017, 164, 8.0, 'Canada'),
+('Arrival', 'Denis Villeneuve', 'Ciencia Ficcion', 2016, 116, 7.9, 'Canada'),
+
+('Alien', 'Ridley Scott', 'Terror', 1979, 117, 8.5, 'USA'),
+('Prometheus', 'Ridley Scott', 'Ciencia Ficcion', 2012, 124, 7.0, 'USA'),
+('The Martian', 'Ridley Scott', 'Ciencia Ficcion', 2015, 144, 8.0, 'USA'),
+('Memento', 'Christopher Nolan', 'Thriller', 2000, 113, 8.4, 'USA'),
+('Tenet', 'Christopher Nolan', 'Ciencia Ficcion', 2020, 150, 7.5, 'USA'),
+
+('Rocky', 'John G. Avildsen', 'Drama', 1976, 120, 8.1, 'USA'),
+('Creed', 'Ryan Coogler', 'Drama', 2015, 133, 7.6, 'USA'),
+('Rambo', 'Ted Kotcheff', 'Accion', 1982, 93, 7.7, 'USA'),
+('Terminator 2', 'James Cameron', 'Accion', 1991, 137, 8.6, 'USA'),
+('True Lies', 'James Cameron', 'Accion', 1994, 141, 7.3, 'USA'),
+
+('El Sexto Sentido', 'M. Night Shyamalan', 'Thriller', 1999, 107, 8.2, 'USA'),
+('Señales', 'M. Night Shyamalan', 'Thriller', 2002, 106, 6.8, 'USA'),
+('Split', 'M. Night Shyamalan', 'Thriller', 2016, 117, 7.3, 'USA'),
+('Glass', 'M. Night Shyamalan', 'Thriller', 2019, 129, 6.6, 'USA'),
+('Unbreakable', 'M. Night Shyamalan', 'Thriller', 2000, 106, 7.3, 'USA'),
+
+('Deadpool', 'Tim Miller', 'Comedia', 2016, 108, 8.0, 'USA'),
+('Deadpool 2', 'David Leitch', 'Comedia', 2018, 119, 7.7, 'USA'),
+('The Mask', 'Chuck Russell', 'Comedia', 1994, 101, 6.9, 'USA'),
+('Ace Ventura', 'Tom Shadyac', 'Comedia', 1994, 86, 6.9, 'USA'),
+('Superbad', 'Greg Mottola', 'Comedia', 2007, 113, 7.6, 'USA'),
+
+('El Resplandor', 'Stanley Kubrick', 'Terror', 1980, 146, 8.4, 'UK'),
+('It', 'Andy Muschietti', 'Terror', 2017, 135, 7.3, 'USA'),
+('Expediente Warren', 'James Wan', 'Terror', 2013, 112, 7.5, 'USA'),
+('Insidious', 'James Wan', 'Terror', 2010, 103, 6.8, 'USA'),
+('Saw', 'James Wan', 'Terror', 2004, 103, 7.6, 'USA'),
+
+('Harry Potter 1', 'Chris Columbus', 'Fantasia', 2001, 152, 7.6, 'UK'),
+('Harry Potter 2', 'Chris Columbus', 'Fantasia', 2002, 161, 7.4, 'UK'),
+('Harry Potter 3', 'Alfonso Cuaron', 'Fantasia', 2004, 142, 7.9, 'UK'),
+('Harry Potter 4', 'Mike Newell', 'Fantasia', 2005, 157, 7.7, 'UK'),
+('Harry Potter 5', 'David Yates', 'Fantasia', 2007, 138, 7.5, 'UK'),
+
+('Star Wars IV', 'George Lucas', 'Ciencia Ficcion', 1977, 121, 8.6, 'USA'),
+('Star Wars V', 'Irvin Kershner', 'Ciencia Ficcion', 1980, 124, 8.7, 'USA'),
+('Star Wars VI', 'Richard Marquand', 'Ciencia Ficcion', 1983, 131, 8.3, 'USA'),
+('Rogue One', 'Gareth Edwards', 'Ciencia Ficcion', 2016, 133, 7.8, 'USA'),
+('The Mandalorian Movie', 'Jon Favreau', 'Ciencia Ficcion', 2024, 140, 7.9, 'USA'),
+
+('Fast and Furious', 'Rob Cohen', 'Accion', 2001, 106, 6.8, 'USA'),
+('Fast Five', 'Justin Lin', 'Accion', 2011, 130, 7.3, 'USA'),
+('Fast X', 'Louis Leterrier', 'Accion', 2023, 141, 5.9, 'USA'),
+('Need for Speed', 'Scott Waugh', 'Accion', 2014, 132, 6.4, 'USA'),
+('Gran Turismo', 'Neill Blomkamp', 'Drama', 2023, 135, 7.2, 'USA'),
+
+('The Social Network', 'David Fincher', 'Drama', 2010, 120, 7.8, 'USA'),
+('Steve Jobs', 'Danny Boyle', 'Drama', 2015, 122, 7.2, 'USA'),
+('Piratas de Silicon Valley', 'Martyn Burke', 'Drama', 1999, 95, 7.2, 'USA'),
+('Jobs', 'Joshua Michael Stern', 'Drama', 2013, 128, 6.0, 'USA'),
+('BlackBerry', 'Matt Johnson', 'Drama', 2023, 119, 7.4, 'Canada'),
+
+('The Batman', 'Matt Reeves', 'Accion', 2022, 176, 7.9, 'USA'),
+('Batman Begins', 'Christopher Nolan', 'Accion', 2005, 140, 8.2, 'USA'),
+('The Dark Knight Rises', 'Christopher Nolan', 'Accion', 2012, 164, 8.4, 'USA'),
+('Logan', 'James Mangold', 'Accion', 2017, 137, 8.1, 'USA'),
+('Iron Man', 'Jon Favreau', 'Accion', 2008, 126, 7.9, 'USA'),
+
+('Doctor Strange', 'Scott Derrickson', 'Fantasia', 2016, 115, 7.5, 'USA'),
+('Thor Ragnarok', 'Taika Waititi', 'Comedia', 2017, 130, 7.9, 'USA'),
+('Black Panther', 'Ryan Coogler', 'Accion', 2018, 134, 7.3, 'USA'),
+('Avengers Endgame', 'Russo Brothers', 'Accion', 2019, 181, 8.4, 'USA'),
+('Civil War', 'Russo Brothers', 'Accion', 2016, 147, 7.8, 'USA'),
+
+('Shutter Island', 'Martin Scorsese', 'Thriller', 2010, 138, 8.2, 'USA'),
+('The Wolf of Wall Street', 'Martin Scorsese', 'Drama', 2013, 180, 8.2, 'USA'),
+('Taxi Driver', 'Martin Scorsese', 'Drama', 1976, 114, 8.2, 'USA'),
+('Goodfellas', 'Martin Scorsese', 'Drama', 1990, 146, 8.7, 'USA'),
+('Casino', 'Martin Scorsese', 'Drama', 1995, 178, 8.2, 'USA'),
+
+('Forrest Gump', 'Robert Zemeckis', 'Drama', 1994, 142, 8.8, 'USA'),
+('Naufrago', 'Robert Zemeckis', 'Drama', 2000, 143, 7.8, 'USA'),
+('Regreso al Futuro', 'Robert Zemeckis', 'Ciencia Ficcion', 1985, 116, 8.5, 'USA'),
+('Contacto', 'Robert Zemeckis', 'Ciencia Ficcion', 1997, 150, 7.5, 'USA'),
+('Polar Express', 'Robert Zemeckis', 'Animacion', 2004, 100, 6.6, 'USA'),
+('Disaster Movie', 'Jason Friedberg', 'Comedia', 2008, 87, 1.9, 'USA'),
+('Dragonball Evolution', 'James Wong', 'Accion', 2009, 85, 2.5, 'USA'),
+('Intocable', 'Olivier Nakache', 'Comedia', 2011, 112, 8.5, 'Francia'),
+('Ciudad de Dios', 'Fernando Meirelles', 'Drama', 2002, 130, 8.6, 'Brasil'),
+('El Secreto de sus Ojos', 'Juan José Campanella', 'Thriller', 2009, 129, 8.2, 'Argentina'),
+('Tesis', 'Alejandro Amenabar', 'Thriller', 1996, 125, 7.4, 'España'),
+
+('300', 'Zack Snyder', 'Accion', 2006, 117, 7.6, 'USA'),
+('Gladiator', 'Ridley Scott', 'Accion', 2000, 155, 8.5, 'USA'),
+('Watchmen', 'Zack Snyder', 'Accion', 2009, 162, 7.6, 'USA'),
+('Man of Steel', 'Zack Snyder', 'Accion', 2013, 143, 7.1, 'USA'),
+('Justice League', 'Zack Snyder', 'Accion', 2021, 242, 8.1, 'USA'),
+('Sucker Punch', 'Zack Snyder', 'Fantasia', 2011, 110, 6.0, 'USA'),
+('Batman vs Superman', 'Zack Snyder', 'Accion', 2016, 151, 6.4, 'USA'),
+('Spider-Man No Way Home', 'Jon Watts', 'Accion', 2021, 148, 8.2, 'USA'),
+('007 Skyfall', 'Sam Mendes', 'Accion', 2012, 143, 7.8, 'UK'),
+
+('El Hoyo', 'Galder Gaztelu-Urrutia', 'Thriller', 2019, 94, 7.0, 'España'),
+('REC', 'Jaume Balaguero', 'Terror', 2007, 78, 7.4, 'España'),
+('Mientras Duermes', 'Jaume Balaguero', 'Thriller', 2011, 102, 7.2, 'España'),
+('Mar Adentro', 'Alejandro Amenabar', 'Drama', 2004, 126, 8.0, 'España'),
+('Proyecto X', NULL, 'Drama', 2020, 110, 6.5, 'USA'),
+('Película Perdida', 'Director Desconocido', NULL, 2018, 95, 5.8, 'España'),
+('Los Otros', 'Alejandro Amenabar', 'Terror', 2001, 104, 7.6, 'España');

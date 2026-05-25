@@ -1,0 +1,18 @@
+<main class="container">
+  <div class="" id="table-responsive">
+    <table class="table table-hover">
+      <tr>
+        <th>Título</th>
+        <th>Director</th>
+        <th>Año</th>
+      </tr>
+      <% peliculas.forEach(pelicula => { %>
+      <tr>
+        <td><%= pelicula.titulo %></td>
+        <td><%= pelicula.director %></td>
+        <td><%= pelicula.anio %></td>
+      </tr>
+      <% }) %>
+    </table>
+  </div>
+</main>

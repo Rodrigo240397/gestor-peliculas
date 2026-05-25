@@ -2,6 +2,8 @@ import Router from 'express'
 import pool from '../db/conection.js'
 const router = Router()
 
+router.use(Router.urlencoded({ extended: true }))
+
 // Ruta para mostrar la lista de películas
 router.get('/', async (req, res) => {
   try {

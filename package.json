@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "bootstrap": "^5.3.8",
+    "bootstrap-icons": "^1.13.1",
     "ejs": "^5.0.2",
     "express": "^5.2.1",
     "express-ejs-layouts": "^2.5.1",

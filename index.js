@@ -2,6 +2,7 @@ import express from 'express'
 import expressLayouts from 'express-ejs-layouts'
 import path from 'path'
 import { fileURLToPath } from 'url'
+import peliculasRoutes from './routes/peliculasRoutes.js'
 
 const app = express()
 
@@ -27,6 +28,8 @@ app.use('/js/bootstrap', express.static(path.join(__dirname, 'node_modules/boots
 app.get('/', (req, res) => {
   res.render('index', { title: 'Inicio' })
 })
+
+app.use('/peliculas', peliculasRoutes)
 
 app.listen(3000, (error) => {
   if (error) {

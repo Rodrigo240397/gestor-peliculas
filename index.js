@@ -24,6 +24,8 @@ app.use(express.static('public'))
 // Servir los archivos de Bootstrap como estáticos
 app.use('/css/bootstrap', express.static(path.join(__dirname, 'node_modules/bootstrap/dist/css')))
 app.use('/js/bootstrap', express.static(path.join(__dirname, 'node_modules/bootstrap/dist/js')))
+// Servir los archivos de Bootstrap Icons como estáticos
+app.use('/css/bootstrap-icons', express.static(path.join(__dirname, 'node_modules/bootstrap-icons/font')))
 
 app.get('/', (req, res) => {
   res.render('index', { title: 'Inicio' })

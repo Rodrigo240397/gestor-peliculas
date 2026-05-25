@@ -1,18 +1,24 @@
 <main class="container">
-  <div class="" id="table-responsive">
-    <table class="table table-hover">
-      <tr>
-        <th>Título</th>
-        <th>Director</th>
-        <th>Año</th>
-      </tr>
-      <% peliculas.forEach(pelicula => { %>
-      <tr>
-        <td><%= pelicula.titulo %></td>
-        <td><%= pelicula.director %></td>
-        <td><%= pelicula.anio %></td>
-      </tr>
-      <% }) %>
-    </table>
-  </div>
+  <table class="table table-hover">
+    <tr>
+      <th>Título</th>
+      <th>Director</th>
+      <th>Año</th>
+      <th>Genero</th>
+      <th>Duración</th>
+      <th>Nota</th>
+      <th>País</th>
+    </tr>
+    <% peliculas.forEach(pelicula => { %>
+    <tr>
+      <td><%= pelicula.titulo %></td>
+      <td><%= pelicula.director %></td>
+      <td><%= pelicula.anio %></td>
+      <td><%= pelicula.genero %></td>
+      <td><%= pelicula.duracion %></td>
+      <td><%= pelicula.nota %></td>
+      <td><%= pelicula.pais %></td>
+    </tr>
+    <% }) %>
+  </table>
 </main>

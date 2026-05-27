@@ -15,6 +15,21 @@ router.get('/', async (req, res) => {
   }
 })
 
+router.get('/:id', async (req, res) => {
+  try {
+    const { id } = req.params
+    const [rows] = await pool.query('SELECT * FROM peliculas WHERE id = ?', [id])
+    if (rows.length === 0) {
+      return res.status(404).send('Película no encontrada')
+    }
+    let pelicula = rows[0]
+    res.render('mostrar', { title: pelicula.titulo, pelicula})
+  } catch (error) {
+    console.error('Error al obtener la película:', error)
+    res.status(500).send('Error al obtener la película')
+  }
+})
+
 router.get('/agregar', async (req, res) => {
   // Obtener géneros para el dropdown
   try {
